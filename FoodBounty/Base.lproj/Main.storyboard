@@ -271,13 +271,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="LZW-kU-LEa">
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pZh-I3-ak9">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="dG1-WW-FAu">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="5fY-tG-7X6">
+                                            <connections>
+                                                <action selector="CancelReview:" destination="99G-Xj-F2L" id="AQa-cB-koJ"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="9Dy-12-LOx">
+                                            <connections>
+                                                <action selector="SubmitReview:" destination="99G-Xj-F2L" id="Ww7-3b-xoA"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="LZW-kU-LEa">
                                 <rect key="frame" x="102" y="247" width="336" height="31"/>
                                 <connections>
                                     <action selector="QualitySlider:" destination="99G-Xj-F2L" eventType="valueChanged" id="aFi-5f-dfH"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="cHA-Hn-1Br">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="cHA-Hn-1Br">
                                 <rect key="frame" x="102" y="178" width="296" height="31"/>
                                 <connections>
                                     <action selector="timelinessSlider:" destination="99G-Xj-F2L" eventType="valueChanged" id="Vjw-mL-Rrg"/>
@@ -301,29 +318,18 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time of Order Completion" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ao-uj-tca">
+                                <rect key="frame" x="237" y="91" width="199" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bds-Qv-z6O">
                                 <rect key="frame" x="104" y="285" width="46" height="30"/>
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pZh-I3-ak9">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
-                                <items>
-                                    <navigationItem title="Title" id="dG1-WW-FAu">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="5fY-tG-7X6">
-                                            <connections>
-                                                <action selector="CancelReview:" destination="99G-Xj-F2L" id="AQa-cB-koJ"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="9Dy-12-LOx">
-                                            <connections>
-                                                <action selector="SubmitReview:" destination="99G-Xj-F2L" id="Ww7-3b-xoA"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Timeness" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ob-Ej-sX3">
                                 <rect key="frame" x="104" y="149" width="74" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -336,8 +342,14 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time of Order Completion" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ao-uj-tca">
-                                <rect key="frame" x="237" y="91" width="199" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63k-Ex-znx">
+                                <rect key="frame" x="279" y="148" width="10" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xum-De-2DT">
+                                <rect key="frame" x="279" y="218" width="10" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -351,9 +363,11 @@
                         <outlet property="OrderDayLabel" destination="jgX-Jn-QIV" id="qyW-4n-FSz"/>
                         <outlet property="OrderNumber" destination="dG1-WW-FAu" id="8Yf-Vp-p1x"/>
                         <outlet property="OrderTimeLabel" destination="9ao-uj-tca" id="Zno-6F-Hbw"/>
+                        <outlet property="QualityLabel" destination="Xum-De-2DT" id="z5B-uF-TfR"/>
                         <outlet property="QualitySlideVal" destination="LZW-kU-LEa" id="fah-cA-koc"/>
                         <outlet property="SubmitReview" destination="9Dy-12-LOx" id="CbS-QV-QJ8"/>
                         <outlet property="timelinessSliderVal" destination="cHA-Hn-1Br" id="HzV-sI-mwW"/>
+                        <outlet property="timelinessSliderValue" destination="63k-Ex-znx" id="hKE-cd-n2T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WDW-MK-kdo" userLabel="First Responder" sceneMemberID="firstResponder"/>
