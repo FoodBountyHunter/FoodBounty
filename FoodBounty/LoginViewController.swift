@@ -18,10 +18,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         usernameTextField.delegate = self
         passwordTextField.delegate = self
         updateLoginButtonState()
+        
+        usernameTextField.becomeFirstResponder()
     }
     
     func updateLoginButtonState() {

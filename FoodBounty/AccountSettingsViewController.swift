@@ -33,21 +33,8 @@ class AccountSettingsViewController: UIViewController, UIPickerViewDataSource, U
         statePicker.delegate = self
         statePicker.dataSource = self
         
-        self.readStates()
+        statePickerValues[0] = AdressHelper.getAllStates()
         self.loadUserData()
-    }
-    
-    func readStates() {
-        var filePath = NSBundle.mainBundle().pathForResource("states", ofType: "json")
-        var data = NSData(contentsOfFile: filePath!)
-        var parseError: NSError?
-        let parsedObject = Optional(NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments, error: &parseError))
-        
-        if let topLevelObj = parsedObject as? NSArray {
-            for state in topLevelObj {
-                statePickerValues[0].append(state as! String)
-            }
-        }
     }
     
     func loadUserData() {
