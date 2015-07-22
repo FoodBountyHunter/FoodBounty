@@ -39,44 +39,7 @@ class BountyListTableViewController: PFQueryTableViewController {
         let bounty: PFObject = self.objects![indexPath.row] as! PFObject
         let reward = bounty.objectForKey("reward") as! Int
         let poster = bounty.objectForKey("poster") as! PFUser
-        bounty.fetchIfNeededInBackgroundWithBlock {
-            (bounty: PFObject?, error: NSError?) -> Void in
-            let poster = bounty?["poster"] as? PFUser
-            dispatch_async(dispatch_get_main_queue()) {
-                cell.detailTextLabel!.text = AdressHelper.getReadableAdress(poster!)
-            }
-        }
-        
         poster.fetch()
-        
-        /*var query = PFQuery(className: "_User")
-        query.whereKey("objectId", equalTo: poster)
-        query.findObjectsInBackgroundWithBlock({(result:[AnyObject]?, error:NSError?) -> Void in
-                dispatch_async(dispatch_get_main_queue()) {
-                    cell.detailTextLabel!.text = AdressHelper.getReadableAdress(result[0] as! PFUser)
-                }
-        })*//*
-        print(poster)
-        print(poster.description)
-        var posterStr = poster.description
-        // set up the query on the Follow table
-        let query = PFQuery(className: "_User")
-        query.whereKey("objectId", equalTo: poster.description)
-        
-        // execute the query
-        query.findObjectsInBackgroundWithBlock{
-            (objects: [AnyObject]?, error: NSError?) -> Void in
-            if let objects = objects {
-                for o in objects {
-                    // o is an entry in the Follow table
-                    // to get the user, we get the object with the to key
-                    let otherUse = o.objectForKey("to") as? PFUser
-                    
-                    // to get the time when we followed this user, get the date key
-                    let when = o.objectForKey("date") as? PFObject
-                }
-            }
-        }*/
         
         cell.textLabel!.text = "\(reward)$"
         cell.detailTextLabel!.text = AdressHelper.getReadableAdress(poster)
