@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07871F251B600E4300074664 /* ReviewSubmitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07871F241B600E4300074664 /* ReviewSubmitViewController.swift */; };
 		33C153771B5E91FB00873591 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C153761B5E91FB00873591 /* AppDelegate.swift */; };
 		33C1537C1B5E91FB00873591 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33C1537A1B5E91FB00873591 /* Main.storyboard */; };
 		33C1537E1B5E91FB00873591 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33C1537D1B5E91FB00873591 /* Images.xcassets */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07871F241B600E4300074664 /* ReviewSubmitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewSubmitViewController.swift; sourceTree = "<group>"; };
 		33C153711B5E91FB00873591 /* FoodBounty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodBounty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33C153751B5E91FB00873591 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33C153761B5E91FB00873591 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 		33C153C11B5ECD2600873591 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				07871F241B600E4300074664 /* ReviewSubmitViewController.swift */,
 				33C153BB1B5E976C00873591 /* LoginViewController.swift */,
 				33C153BD1B5EBFC100873591 /* HomeViewController.swift */,
 				33C153BF1B5EC03600873591 /* SignUpViewController.swift */,
@@ -336,6 +339,7 @@
 				33C153771B5E91FB00873591 /* AppDelegate.swift in Sources */,
 				33C153C01B5EC03600873591 /* SignUpViewController.swift in Sources */,
 				33C153BE1B5EBFC100873591 /* HomeViewController.swift in Sources */,
+				07871F251B600E4300074664 /* ReviewSubmitViewController.swift in Sources */,
 				33C153C41B5ECD4200873591 /* ViewControllerUtils.swift in Sources */,
 				33C153CE1B5FC13100873591 /* AccountSettingsViewController.swift in Sources */,
 			);
@@ -541,6 +545,7 @@
 				33C153921B5E91FB00873591 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		33C153931B5E91FB00873591 /* Build configuration list for PBXNativeTarget "FoodBountyTests" */ = {
 			isa = XCConfigurationList;
@@ -549,6 +554,7 @@
 				33C153951B5E91FB00873591 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
