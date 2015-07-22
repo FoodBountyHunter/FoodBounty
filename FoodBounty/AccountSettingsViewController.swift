@@ -80,18 +80,11 @@ class AccountSettingsViewController: UIViewController, UIPickerViewDataSource, U
             user.saveInBackground()
         }
         
-        returnToHome()
+        ViewControllerUtils.returnToLastView(self)
     }
     
     func cancel() {
-        returnToHome()
-    }
-    
-    func returnToHome() {
-        if let navigationController = self.navigationController
-        {
-            navigationController.popViewControllerAnimated(true)
-        }
+        ViewControllerUtils.returnToLastView(self)
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {

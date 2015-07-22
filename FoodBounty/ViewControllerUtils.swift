@@ -25,4 +25,11 @@ class ViewControllerUtils {
         label.hidden = false
         label.layer.addAnimation( anim, forKey:nil )
     }
+    
+    class func returnToLastView(currentVC: UIViewController) {
+        if let navigationController = currentVC.navigationController
+        {
+            navigationController.popViewControllerAnimated(true)
+        }
+    }
 }

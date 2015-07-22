@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Parse
+import ParseUI
 import QuartzCore
 
 class NewBountyViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
@@ -19,6 +21,12 @@ class NewBountyViewController: UIViewController, UIPickerViewDataSource, UIPicke
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.hidesBackButton = true
+        let cancelButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Cancel, target: self, action: "cancel")
+        let saveButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Save, target: self, action: "save")
+        self.navigationItem.leftBarButtonItem = cancelButton
+        self.navigationItem.rightBarButtonItem = saveButton
+        
         self.commentTextView.layer.borderColor = UIColor.lightGrayColor().CGColor
         self.commentTextView.layer.backgroundColor = UIColor.whiteColor().CGColor
         self.commentTextView.layer.borderWidth = 0.8
@@ -28,6 +36,20 @@ class NewBountyViewController: UIViewController, UIPickerViewDataSource, UIPicke
         self.categoryPicker.dataSource = self
     }
     
+    func cancel() {
+        ViewControllerUtils.returnToLastView(self)
+    }
+
+    func save() {
+        var bounty = Bounty(className: Bounty.pClass)
+        bounty.category = categoryPicker.selectedRowInComponent(0)
+        bounty.comment = commentTextView.text
+        bounty.reward = (rewardTextField.text as NSString).floatValue
+        
+        bounty.save()
+        
+        ViewControllerUtils.returnToLastView(self)
+    }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
