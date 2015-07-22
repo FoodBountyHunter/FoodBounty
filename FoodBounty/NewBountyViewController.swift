@@ -14,9 +14,12 @@ import QuartzCore
 class NewBountyViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     @IBOutlet weak var categoryPicker: UIPickerView!
-    @IBOutlet weak var itemsTableView: UITableView!
     @IBOutlet weak var commentTextView: UITextView!
     @IBOutlet weak var rewardTextField: UITextField!
+    @IBOutlet weak var itemTableViewContainer: UIView!
+    var itemTableViewController: ItemTableViewController!
+    var bounty = Bounty(className: Bounty.pClass)
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,18 +40,27 @@ class NewBountyViewController: UIViewController, UIPickerViewDataSource, UIPicke
     }
     
     func cancel() {
+        bounty.delete()
         ViewControllerUtils.returnToLastView(self)
     }
 
     func save() {
-        var bounty = Bounty(className: Bounty.pClass)
         bounty.category = categoryPicker.selectedRowInComponent(0)
         bounty.comment = commentTextView.text
         bounty.reward = (rewardTextField.text as NSString).floatValue
+        bounty.poster = PFUser.currentUser()!
+        bounty.status = 0
         
         bounty.save()
         
         ViewControllerUtils.returnToLastView(self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "itemTableViewEmbed" {
+            self.itemTableViewController = segue.destinationViewController as! ItemTableViewController
+            self.itemTableViewController.bounty = self.bounty
+        }
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {

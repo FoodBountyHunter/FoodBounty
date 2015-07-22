@@ -17,8 +17,6 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         self.navigationItem.hidesBackButton = true
-        
-        self.accountSettingsBarButton.title = PFUser.currentUser()?.username!       
     }
     
     @IBAction func postNewBounty(sender: AnyObject) {
