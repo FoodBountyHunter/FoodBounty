@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Initializing Parse
         Bounty.registerSubclass()
         Item.registerSubclass()
+        Review.registerSubclass()
+        
         Parse.setApplicationId("dmiBApXpPQgCeGY2QqNCWkE3DocJRjR1yjfRgTpQ",
             clientKey: "yYOo68JiL6t8dLWOthqlGIkOJOEB1mbT4MKkV1ge")
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)

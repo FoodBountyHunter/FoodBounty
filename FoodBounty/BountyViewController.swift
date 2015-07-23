@@ -80,6 +80,7 @@ class BountyViewController: UIViewController {
             else if bounty.status == 2 {
                 if itemTableViewController.allItemsChecked() {
                     self.bounty.status = 3
+                    Review.createNewReview(forBounty: self.bounty)
                 }
                 else {
                     var alert = UIAlertController(title: "Wait!", message: "You have to check all items before you can deliver them.", preferredStyle: UIAlertControllerStyle.Alert)
@@ -89,7 +90,7 @@ class BountyViewController: UIViewController {
             }
         }
         
-        bounty.save()
+        bounty.saveInBackground()
         self.initData()
     }
     
