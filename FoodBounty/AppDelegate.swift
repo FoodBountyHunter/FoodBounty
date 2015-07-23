@@ -23,13 +23,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         GMSServices.provideAPIKey("AIzaSyAIzvJO72_2YJjkDmYsIeiI2RtTKc2AYQQ")
         
-        UINavigationBar.appearance().barTintColor = UIColor.purpleColor()
+        UINavigationBar.appearance().barTintColor = UIColor(red: 1, green: 130/255, blue: 80/255, alpha: 1)
+        UINavigationBar.appearance().tintColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.8)
         var shadow = NSShadow()
-        shadow.shadowColor = UIColor.blackColor()
+        shadow.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
         shadow.shadowOffset = CGSizeMake(0, 1)
         var font = UIFont(name: "HelveticaNeue-CondensedBlack", size: 21)
-        //UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: font, NSShadowAttributeName: shadow, NSForegroundColorAttributeName: UIColor.whiteColor()]
-        
+        UINavigationBar.appearance().titleTextAttributes = [NSShadowAttributeName: shadow, NSForegroundColorAttributeName: UIColor.whiteColor()]
+
         return true
     }
 
