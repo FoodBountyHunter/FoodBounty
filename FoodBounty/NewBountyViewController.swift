@@ -9,7 +9,7 @@
 import UIKit
 import QuartzCore
 
-class NewBountyViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class NewBountyViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var categoryPicker: UIPickerView!
     @IBOutlet weak var commentTextView: UITextView!
@@ -35,6 +35,8 @@ class NewBountyViewController: UIViewController, UIPickerViewDataSource, UIPicke
         
         self.categoryPicker.delegate = self
         self.categoryPicker.dataSource = self
+        
+        self.rewardTextField.delegate = self
     }
     
     func cancel() {
@@ -47,7 +49,7 @@ class NewBountyViewController: UIViewController, UIPickerViewDataSource, UIPicke
         let comment = commentTextView.text
         let reward = rewardTextField.text
         
-        if reward != "" && itemTableViewController.objects?.count > 0{
+        if reward != "" && itemTableViewController.hasItems() {
             bounty.category = category
             bounty.comment = comment
             bounty.reward = (reward as NSString).floatValue
@@ -64,6 +66,17 @@ class NewBountyViewController: UIViewController, UIPickerViewDataSource, UIPicke
             self.presentViewController(alert, animated: true, completion: nil)
         }
         
+    }
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        let invalidCharacters = NSCharacterSet(charactersInString: "0123456789.").invertedSet
+        
+        let range = string.rangeOfCharacterFromSet(invalidCharacters, options: nil, range: Range<String.Index>(start: string.startIndex, end: string.endIndex))
+        if (range != nil) {
+            return false
+        }
+        
+        return true
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

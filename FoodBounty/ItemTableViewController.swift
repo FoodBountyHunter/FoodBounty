@@ -64,10 +64,17 @@ class ItemTableViewController: PFQueryTableViewController {
         return allItemsChecked
     }
     
+    func hasItems() -> Bool {
+        return itemsAdded
+    }
+    
     override func queryForTable() -> PFQuery {
         var query = PFQuery(className: Item.pClass)
         if bounty != nil && itemsAdded {
             query.whereKey("bounty", equalTo: bounty)
+        }
+        else {
+            query.whereKeyDoesNotExist("objectId")
         }
         
         return query

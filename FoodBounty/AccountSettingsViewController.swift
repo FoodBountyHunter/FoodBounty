@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AccountSettingsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class AccountSettingsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var emailAdressTextField: UITextField!
@@ -28,6 +28,8 @@ class AccountSettingsViewController: UIViewController, UIPickerViewDataSource, U
         let saveButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Save, target: self, action: "save")
         self.navigationItem.leftBarButtonItem = cancelButton
         self.navigationItem.rightBarButtonItem = saveButton
+        
+        self.postalCodeTextField.delegate = self
         
         statePicker.delegate = self
         statePicker.dataSource = self
@@ -56,14 +58,24 @@ class AccountSettingsViewController: UIViewController, UIPickerViewDataSource, U
         }
     }
     
+    
+    
     func save() {
         if let user = PFUser.currentUser() {
-            user.email = self.emailAdressTextField.text
-            user.setObject(self.streetTextField.text, forKey: "street")
-            user.setObject(self.postalCodeTextField.text, forKey: "postalCode")
-            user.setObject(self.cityTextField.text, forKey: "city")
-            user.setObject(self.statePicker.selectedRowInComponent(0), forKey: "state")
-            user.saveInBackground()
+            var email = self.emailAdressTextField.text
+            if ViewControllerUtils.isValidEmail(email) {
+                user.email = email
+                user.setObject(self.streetTextField.text, forKey: "street")
+                user.setObject(self.postalCodeTextField.text, forKey: "postalCode")
+                user.setObject(self.cityTextField.text, forKey: "city")
+                user.setObject(self.statePicker.selectedRowInComponent(0), forKey: "state")
+                user.saveInBackground()
+            }
+            else {
+                var alert = UIAlertController(title: "", message: "Please enter a valid E-Mail adress.", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
         }
         
         ViewControllerUtils.returnToLastView(self)
@@ -71,6 +83,17 @@ class AccountSettingsViewController: UIViewController, UIPickerViewDataSource, U
     
     func cancel() {
         ViewControllerUtils.returnToLastView(self)
+    }
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        let invalidCharacters = NSCharacterSet(charactersInString: "0123456789").invertedSet
+        
+        let range = string.rangeOfCharacterFromSet(invalidCharacters, options: nil, range: Range<String.Index>(start: string.startIndex, end: string.endIndex))
+        if (range != nil) {
+            return false
+        }
+        
+        return true
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
