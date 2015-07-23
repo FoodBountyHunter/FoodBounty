@@ -23,6 +23,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         GMSServices.provideAPIKey("AIzaSyAIzvJO72_2YJjkDmYsIeiI2RtTKc2AYQQ")
         
+        UINavigationBar.appearance().barTintColor = UIColor.purpleColor()
+        var shadow = NSShadow()
+        shadow.shadowColor = UIColor.blackColor()
+        shadow.shadowOffset = CGSizeMake(0, 1)
+        var font = UIFont(name: "HelveticaNeue-CondensedBlack", size: 21)
+        //UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: font, NSShadowAttributeName: shadow, NSForegroundColorAttributeName: UIColor.whiteColor()]
+        
         return true
     }
 
@@ -46,10 +53,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    }
-    
-    func applicationDidFinishLaunching(application: UIApplication) {
-        <#code#>
     }
     
     func incrementNetworkActivity()

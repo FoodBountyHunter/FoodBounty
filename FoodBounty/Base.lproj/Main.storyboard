@@ -832,7 +832,7 @@
             <objects>
                 <tableViewController id="NIv-j5-MZM" customClass="ItemTableViewController" customModule="FoodBounty" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="HNW-3m-EiT">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="157"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -1023,6 +1023,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="actionButton" destination="zLL-42-s7w" id="nGG-1C-BOi"/>
                         <outlet property="categoryLabel" destination="TKS-BI-VgE" id="ewK-b2-vWl"/>
                         <outlet property="commentLabel" destination="Yes-Uf-e6a" id="Py5-Ad-th9"/>
                         <outlet property="rewardLabel" destination="htf-CJ-dvm" id="4dj-SA-tEM"/>
@@ -1037,7 +1038,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="afC-Xl-QLh"/>
-        <segue reference="0SG-Tq-pwm"/>
         <segue reference="1L0-2X-eHW"/>
+        <segue reference="KN6-nV-dxQ"/>
     </inferredMetricsTieBreakers>
 </document>

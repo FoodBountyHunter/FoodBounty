@@ -167,8 +167,8 @@
 				33EF18071B6006BF00B75ABD /* ItemTableViewController.swift */,
 				33E1A3EC1B6021F500C9FC12 /* AddItemViewController.swift */,
 				33E1A3EE1B602E3700C9FC12 /* BountyListTableViewController.swift */,
-				3383D9531B6076BE00CC89DF /* BountyViewController.swift */,
 				3383D95C1B609D9400CC89DF /* BountiesMapViewController.swift */,
+				3383D9531B6076BE00CC89DF /* BountyViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";

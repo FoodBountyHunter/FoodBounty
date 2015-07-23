@@ -43,15 +43,27 @@ class NewBountyViewController: UIViewController, UIPickerViewDataSource, UIPicke
     }
 
     func save() {
-        bounty.category = categoryPicker.selectedRowInComponent(0)
-        bounty.comment = commentTextView.text
-        bounty.reward = (rewardTextField.text as NSString).floatValue
-        bounty.poster = PFUser.currentUser()!
-        bounty.status = 0
+        let category = categoryPicker.selectedRowInComponent(0)
+        let comment = commentTextView.text
+        let reward = rewardTextField.text
         
-        bounty.save()
+        if reward != "" && itemTableViewController.objects?.count > 0{
+            bounty.category = category
+            bounty.comment = comment
+            bounty.reward = (reward as NSString).floatValue
+            bounty.poster = PFUser.currentUser()!
+            bounty.status = 0
+            
+            bounty.save()
+            
+            ViewControllerUtils.returnToLastView(self)
+        }
+        else {
+            var alert = UIAlertController(title: "Wait!", message: "You have to add at least one item and specify a reward.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Got it!", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
         
-        ViewControllerUtils.returnToLastView(self)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

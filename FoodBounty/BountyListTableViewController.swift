@@ -42,9 +42,7 @@ class BountyListTableViewController: PFQueryTableViewController {
     }
     
     override func queryForTable() -> PFQuery {
-        var query = PFQuery(className: Bounty.pClass)
-        
-        return query
+        return Bounty.claimableBountiesQuery(PFUser.currentUser()!)
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

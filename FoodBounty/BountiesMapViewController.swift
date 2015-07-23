@@ -26,7 +26,8 @@ class BountiesMapViewController: UIViewController, CLLocationManagerDelegate, GM
         mapView.delegate = self
         self.view = mapView
         
-        Bounty.getQuery(notPostedByUser: PFUser.currentUser()!).findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
+        var query = Bounty.claimableBountiesQuery(PFUser.currentUser()!)
+        query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
             if objects != nil {
                 for bounty in objects! {
                     let poster = bounty.objectForKey("poster") as! PFUser

@@ -18,9 +18,16 @@ class Bounty: PFObject, PFSubclassing {
     @NSManaged var hunter: PFUser
     @NSManaged var status: Int
     
-    class func getQuery(notPostedByUser user: PFUser) -> PFQuery {
+    class func claimableBountiesQuery(user: PFUser) -> PFQuery {
         var query = PFQuery(className: pClass)
         query.whereKey("poster", notEqualTo: user)
+        query.whereKey("status", equalTo: 0)
+        return query
+    }
+    
+    class func postedBountiesQuery(user: PFUser) -> PFQuery {
+        var query = PFQuery(className: pClass)
+        query.whereKey("poster", equalTo: user)
         return query
     }
     

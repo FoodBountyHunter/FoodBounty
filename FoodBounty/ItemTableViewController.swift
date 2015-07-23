@@ -12,6 +12,7 @@ class ItemTableViewController: PFQueryTableViewController {
     
     var bounty: Bounty!
     var itemsAdded = false
+    var itemsCheckable = false
     
     required init!(coder aDecoder: NSCoder!) {
         super.init(coder: aDecoder)
@@ -44,10 +45,23 @@ class ItemTableViewController: PFQueryTableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var selectedItem = self.objects![indexPath.row] as! Item
-        selectedItem.done = !selectedItem.done
-        selectedItem.saveInBackground()
-        self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
+        if itemsCheckable {
+            var selectedItem = self.objects![indexPath.row] as! Item
+            selectedItem.done = !selectedItem.done
+            selectedItem.saveInBackground()
+            self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
+        }
+    }
+    
+    func allItemsChecked() -> Bool {
+        var allItemsChecked = true
+        
+        for object in self.objects! {
+            let item = object as! Item
+            allItemsChecked = allItemsChecked && item.done
+        }
+        
+        return allItemsChecked
     }
     
     override func queryForTable() -> PFQuery {

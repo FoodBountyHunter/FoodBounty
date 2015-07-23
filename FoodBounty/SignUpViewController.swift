@@ -59,7 +59,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                     user.signUpInBackgroundWithBlock() {
                         (succeeded: Bool, error: NSError?) -> Void in
                         if error == nil {
-                            var alert = UIAlertController(title: "Contratulations!", message: "You successfully created a FoodBounty account!", preferredStyle: UIAlertControllerStyle.Alert)
+                            var alert = UIAlertController(title: "Congratulations!", message: "You successfully created a FoodBounty account!", preferredStyle: UIAlertControllerStyle.Alert)
                             alert.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in
                                 self.performSegueWithIdentifier("logInAfterSignUpViewSegue", sender: self)
                             })
