@@ -21,8 +21,6 @@ class HomeViewController: UIViewController {
     @IBAction func postNewBounty(sender: AnyObject) {
         if let user = PFUser.currentUser() {
             // check if user has adress set
-            //let username = user.username
-            //let email = user.email
             let street = user.objectForKey("street") as? String
             let postalCode = user.objectForKey("postalCode") as? String
             let city = user.objectForKey("city") as? String

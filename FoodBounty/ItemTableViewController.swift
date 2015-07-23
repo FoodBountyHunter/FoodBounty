@@ -33,7 +33,7 @@ class ItemTableViewController: PFQueryTableViewController {
         var newItem = Item(className: Item.pClass)
         newItem.amount = amount
         newItem.designation = designation
-        newItem["bounty"] = bounty
+        newItem.bounty = bounty
         newItem.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in
             dispatch_async(dispatch_get_main_queue()) {
@@ -41,6 +41,16 @@ class ItemTableViewController: PFQueryTableViewController {
                 self.tableView.reloadData()
             }
         }
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var selectedItem = self.objects![indexPath.row] as! Item
+        selectedItem.done = !selectedItem.done
+        selectedItem.saveInBackground()
+        self.tableView.beginUpdates()
+        self.tableView.reloadData()
+        self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
+        self.tableView.endUpdates()
     }
     
     override func queryForTable() -> PFQuery {
@@ -63,11 +73,10 @@ class ItemTableViewController: PFQueryTableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
-        let item: PFObject = self.objects![indexPath.row] as! PFObject
-        let amount = item.objectForKey("amount") as! Int
-        let designation = item.objectForKey("designation") as! String
+        let item = self.objects![indexPath.row] as! Item
         
-        cell.textLabel!.text = "\(amount)x \(designation)"
+        cell.textLabel!.text = "\(item.amount)x \(item.designation)"
+        cell.accessoryType = item.done ? UITableViewCellAccessoryType.Checkmark : UITableViewCellAccessoryType.None
         
         return cell
     }

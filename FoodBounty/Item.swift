@@ -8,24 +8,15 @@
 
 import Foundation
 
-class Item: PFObject {
+class Item: PFObject, PFSubclassing {
     static let pClass = "Item"
- 
-    var amount: Int {
-        get {
-            return self.objectForKey("amount") as! Int
-        }
-        set(newValue) {
-            self.setObject(newValue as Int, forKey: "amount")
-        }
-    }
-    var designation: String {
-        get {
-            return self.objectForKey("designation") as! String
-        }
-        set(newValue) {
-            self.setObject(newValue, forKey: "designation")
-        }
-    }
     
+    @NSManaged var amount: Int
+    @NSManaged var designation: String
+    @NSManaged var done: Bool
+    @NSManaged var bounty: Bounty
+    
+    static func parseClassName() -> String {
+        return pClass
+    }    
 }

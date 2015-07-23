@@ -29,12 +29,13 @@ class BountyViewController: UIViewController {
     func initData() {
         self.rewardLabel.text = "\(self.bounty.reward)$"
         self.categoryLabel.text = BountyCategory.categoryById(self.bounty.category)
-        self.statusLabel.text = "\(self.bounty.status)"
+        self.statusLabel.text = BountyStatus.statusById(self.bounty.status)
         self.usernameLabel.text = self.bounty.poster.username
         self.commentLabel.text = self.bounty.comment
     }
     
     @IBAction func statusAction(sender: AnyObject) {
+        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
