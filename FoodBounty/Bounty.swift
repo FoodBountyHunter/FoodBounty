@@ -34,4 +34,15 @@ class Bounty: PFObject, PFSubclassing {
     static func parseClassName() -> String {
         return pClass
     }
+    
+    func itemCount() -> Int {
+        var query = PFQuery(className: Item.pClass)
+        query.whereKey("bounty", equalTo: self)
+        if let objects = query.findObjects() {
+            return objects.count
+        }
+        else {
+            return 0
+        }
+    }
 }

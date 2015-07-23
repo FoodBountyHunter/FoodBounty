@@ -29,6 +29,15 @@ class BountyListTableViewController: PFQueryTableViewController {
         self.navigationItem.rightBarButtonItem = mapButton
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.tableView.beginUpdates()
+        self.loadObjects()
+        self.tableView.reloadData()
+        self.tableView.endUpdates()
+    }
+    
     func openMapView () {
         self.performSegueWithIdentifier("showMapViewSegue", sender: self)
     }
@@ -46,14 +55,15 @@ class BountyListTableViewController: PFQueryTableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("BountyCell", forIndexPath: indexPath) as! BountyListTableViewCell
         let bounty: Bounty = self.objects![indexPath.row] as! Bounty
-        let reward = bounty.reward
         let poster = bounty.poster
         poster.fetch()
         
-        cell.textLabel!.text = "\(reward)$"
-        cell.detailTextLabel!.text = AdressHelper.getReadableAdress(poster)
+        cell.rewardLabel.text = "\(bounty.reward)$"
+        cell.itemsCountLabel.text = "\(bounty.itemCount()) Items"
+        cell.categoryLabel.text = BountyCategory.categoryById(bounty.category)
+        cell.addressLabel.text = AdressHelper.getReadableAdress(poster)
         
         return cell
     }
