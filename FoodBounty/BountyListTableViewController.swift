@@ -70,26 +70,48 @@ class BountyListTableViewController: PFQueryTableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("BountyCell", forIndexPath: indexPath) as! BountyListTableViewCell
-        let bounty: Bounty = self.objects![indexPath.row] as! Bounty
-        let poster = bounty.poster
-        
-        poster.fetchInBackgroundWithBlock { (object: PFObject?, error: NSError?) -> Void in
-            dispatch_async(dispatch_get_main_queue()) {
-                cell.addressLabel.text = AdressHelper.getReadableAdress(object as! PFUser)
+        if displayType == .Posted {
+            let cell = tableView.dequeueReusableCellWithIdentifier("BountyWithStatusCell", forIndexPath: indexPath) as! BountyWithStatusListTableViewCell
+            
+            let bounty: Bounty = self.objects![indexPath.row] as! Bounty
+            
+            bounty.itemCountAsync { (count: Int) -> Void in
+                dispatch_async(dispatch_get_main_queue()) {
+                    cell.itemsCountLabel.text = "\(count) Items"
+                    cell.itemsCountLabel.hidden = false
+                }
             }
+            
+            cell.rewardLabel.text = "\(bounty.reward) $"
+            cell.categoryLabel.text = BountyCategory.categoryById(bounty.category)
+            cell.statusLabel.text = BountyStatus.statusById(bounty.status)
+            cell.statusLabel.textColor = BountyStatus.statusColorById(bounty.status)
+            
+            return cell
         }
-        
-        bounty.itemCountAsync { (count: Int) -> Void in
-            dispatch_async(dispatch_get_main_queue()) {
-                cell.itemsCountLabel.text = "\(count) Items"
-                cell.itemsCountLabel.hidden = false
+        else {
+            let cell = tableView.dequeueReusableCellWithIdentifier("BountyCell", forIndexPath: indexPath) as! BountyListTableViewCell
+            
+            let bounty: Bounty = self.objects![indexPath.row] as! Bounty
+            let poster = bounty.poster
+            
+            poster.fetchInBackgroundWithBlock { (object: PFObject?, error: NSError?) -> Void in
+                dispatch_async(dispatch_get_main_queue()) {
+                    cell.addressLabel.text = AdressHelper.getReadableAdress(object as! PFUser)
+                }
             }
+            
+            bounty.itemCountAsync { (count: Int) -> Void in
+                dispatch_async(dispatch_get_main_queue()) {
+                    cell.itemsCountLabel.text = "\(count) Items"
+                    cell.itemsCountLabel.hidden = false
+                }
+            }
+            
+            cell.rewardLabel.text = "\(bounty.reward) $"
+            cell.categoryLabel.text = BountyCategory.categoryById(bounty.category)
+            
+            return cell
         }
-        
-        cell.rewardLabel.text = "\(bounty.reward) $"
-        cell.categoryLabel.text = BountyCategory.categoryById(bounty.category)
-        
-        return cell
     }
 }

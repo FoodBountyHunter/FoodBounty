@@ -831,6 +831,69 @@
                                     <segue destination="8Q7-Vy-oLj" kind="show" identifier="displayBountyFromListSegue" id="XcV-ON-ae3"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BountyWithStatusCell" rowHeight="56" id="ROl-4M-Nlb" customClass="BountyWithStatusListTableViewCell" customModule="FoodBounty" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ROl-4M-Nlb" id="Nme-Pd-qze">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Reward" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yIX-9l-Br0">
+                                            <rect key="frame" x="8" y="8" width="66" height="21"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ItemsCount" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HvA-an-Lii">
+                                            <rect key="frame" x="256" y="8" width="89" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCe-6e-CAR">
+                                            <rect key="frame" x="521" y="8" width="71" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="status" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEe-BT-eiN">
+                                            <rect key="frame" x="69" y="30" width="53" height="17"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="17" id="4PA-S7-QZg"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Status: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMJ-kc-hqI">
+                                            <rect key="frame" x="8" y="30" width="53" height="17"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="17" id="9bR-ms-msZ"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="HvA-an-Lii" firstAttribute="top" secondItem="Nme-Pd-qze" secondAttribute="topMargin" id="DiR-fN-yGP"/>
+                                        <constraint firstItem="gMJ-kc-hqI" firstAttribute="bottom" secondItem="Nme-Pd-qze" secondAttribute="bottomMargin" id="F9t-G4-MG6"/>
+                                        <constraint firstItem="yIX-9l-Br0" firstAttribute="leading" secondItem="Nme-Pd-qze" secondAttribute="leadingMargin" id="HDy-St-Jhu"/>
+                                        <constraint firstItem="gMJ-kc-hqI" firstAttribute="leading" secondItem="Nme-Pd-qze" secondAttribute="leadingMargin" id="aju-ud-bN7"/>
+                                        <constraint firstItem="yIX-9l-Br0" firstAttribute="top" secondItem="Nme-Pd-qze" secondAttribute="topMargin" id="dxo-ny-GRh"/>
+                                        <constraint firstAttribute="centerX" secondItem="HvA-an-Lii" secondAttribute="centerX" id="eJZ-f6-Klw"/>
+                                        <constraint firstItem="gMJ-kc-hqI" firstAttribute="baseline" secondItem="TEe-BT-eiN" secondAttribute="baseline" id="g30-SI-enM"/>
+                                        <constraint firstItem="VCe-6e-CAR" firstAttribute="trailing" secondItem="Nme-Pd-qze" secondAttribute="trailingMargin" id="iaF-oa-toX"/>
+                                        <constraint firstItem="TEe-BT-eiN" firstAttribute="leading" secondItem="gMJ-kc-hqI" secondAttribute="trailing" constant="8" id="j7i-hf-hGP"/>
+                                        <constraint firstItem="VCe-6e-CAR" firstAttribute="top" secondItem="Nme-Pd-qze" secondAttribute="topMargin" id="lMs-1q-VXQ"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="categoryLabel" destination="VCe-6e-CAR" id="faO-9o-zkp"/>
+                                    <outlet property="itemsCountLabel" destination="HvA-an-Lii" id="viL-z2-Rrv"/>
+                                    <outlet property="rewardLabel" destination="yIX-9l-Br0" id="6D9-Nl-Clw"/>
+                                    <outlet property="statusLabel" destination="TEe-BT-eiN" id="GEw-vA-92j"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="rmV-z0-EMG" id="z9l-kC-j4p"/>
@@ -851,7 +914,7 @@
             <objects>
                 <tableViewController id="NIv-j5-MZM" customClass="ItemTableViewController" customModule="FoodBounty" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="HNW-3m-EiT">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="157"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -1057,9 +1120,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="KN6-nV-dxQ"/>
+        <segue reference="XcV-ON-ae3"/>
         <segue reference="KGP-Dl-dcG"/>
         <segue reference="afC-Xl-QLh"/>
-        <segue reference="0SG-Tq-pwm"/>
-        <segue reference="XcV-ON-ae3"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -11,6 +11,7 @@
 		3383D9571B608AB300CC89DF /* BountyStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3383D9561B608AB300CC89DF /* BountyStatus.swift */; };
 		3383D95D1B609D9400CC89DF /* BountiesMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3383D95C1B609D9400CC89DF /* BountiesMapViewController.swift */; };
 		3383D95F1B61284B00CC89DF /* BountyListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3383D95E1B61284B00CC89DF /* BountyListTableViewCell.swift */; };
+		33AF0D5B1B615B5700792612 /* BountyWithStatusListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AF0D5A1B615B5700792612 /* BountyWithStatusListTableViewCell.swift */; };
 		33C153771B5E91FB00873591 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C153761B5E91FB00873591 /* AppDelegate.swift */; };
 		33C1537C1B5E91FB00873591 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33C1537A1B5E91FB00873591 /* Main.storyboard */; };
 		33C1537E1B5E91FB00873591 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33C1537D1B5E91FB00873591 /* Images.xcassets */; };
@@ -49,6 +50,7 @@
 		3383D9561B608AB300CC89DF /* BountyStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BountyStatus.swift; sourceTree = "<group>"; };
 		3383D95C1B609D9400CC89DF /* BountiesMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BountiesMapViewController.swift; sourceTree = "<group>"; };
 		3383D95E1B61284B00CC89DF /* BountyListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BountyListTableViewCell.swift; sourceTree = "<group>"; };
+		33AF0D5A1B615B5700792612 /* BountyWithStatusListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BountyWithStatusListTableViewCell.swift; sourceTree = "<group>"; };
 		33C153711B5E91FB00873591 /* FoodBounty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodBounty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33C153751B5E91FB00873591 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33C153761B5E91FB00873591 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		33AF0D591B615B1900792612 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				3383D95E1B61284B00CC89DF /* BountyListTableViewCell.swift */,
+				33AF0D5A1B615B5700792612 /* BountyWithStatusListTableViewCell.swift */,
+			);
+			name = TableViewCells;
+			sourceTree = "<group>";
+		};
 		33C153681B5E91FB00873591 = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +172,7 @@
 		33C153C11B5ECD2600873591 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				33AF0D591B615B1900792612 /* TableViewCells */,
 				33C153BB1B5E976C00873591 /* LoginViewController.swift */,
 				33C153BD1B5EBFC100873591 /* HomeViewController.swift */,
 				33C153BF1B5EC03600873591 /* SignUpViewController.swift */,
@@ -169,7 +181,6 @@
 				33EF18071B6006BF00B75ABD /* ItemTableViewController.swift */,
 				33E1A3EC1B6021F500C9FC12 /* AddItemViewController.swift */,
 				33E1A3EE1B602E3700C9FC12 /* BountyListTableViewController.swift */,
-				3383D95E1B61284B00CC89DF /* BountyListTableViewCell.swift */,
 				3383D95C1B609D9400CC89DF /* BountiesMapViewController.swift */,
 				3383D9531B6076BE00CC89DF /* BountyViewController.swift */,
 			);
@@ -368,6 +379,7 @@
 				33E1A3ED1B6021F500C9FC12 /* AddItemViewController.swift in Sources */,
 				33C153C41B5ECD4200873591 /* ViewControllerUtils.swift in Sources */,
 				33EF180A1B60075900B75ABD /* Item.swift in Sources */,
+				33AF0D5B1B615B5700792612 /* BountyWithStatusListTableViewCell.swift in Sources */,
 				33E1A3EF1B602E3700C9FC12 /* BountyListTableViewController.swift in Sources */,
 				3383D9571B608AB300CC89DF /* BountyStatus.swift in Sources */,
 				33EF18041B5FEE9300B75ABD /* Bounty.swift in Sources */,

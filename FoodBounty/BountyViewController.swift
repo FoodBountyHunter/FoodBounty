@@ -33,12 +33,7 @@ class BountyViewController: UIViewController {
         self.usernameLabel.text = self.bounty.poster.username
         self.commentLabel.text = self.bounty.comment
         self.statusLabel.text = BountyStatus.statusById(self.bounty.status)
-        if bounty.status == 4 {
-            self.statusLabel.textColor = UIColor(red: (220/255), green: (20/255), blue: 0, alpha: 1)
-        }
-        else if bounty.status == 3 {
-            self.statusLabel.textColor = UIColor.lightGrayColor()
-        }
+        self.statusLabel.textColor = BountyStatus.statusColorById(bounty.status)
         
         if PFUser.currentUser()?.objectId == bounty.poster.objectId {
             if bounty.status == 0 {
