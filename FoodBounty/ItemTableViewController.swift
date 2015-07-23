@@ -47,10 +47,7 @@ class ItemTableViewController: PFQueryTableViewController {
         var selectedItem = self.objects![indexPath.row] as! Item
         selectedItem.done = !selectedItem.done
         selectedItem.saveInBackground()
-        self.tableView.beginUpdates()
-        self.tableView.reloadData()
         self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
-        self.tableView.endUpdates()
     }
     
     override func queryForTable() -> PFQuery {
