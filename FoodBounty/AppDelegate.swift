@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Initializing Parse
+        Bounty.registerSubclass()
         Parse.setApplicationId("dmiBApXpPQgCeGY2QqNCWkE3DocJRjR1yjfRgTpQ",
             clientKey: "yYOo68JiL6t8dLWOthqlGIkOJOEB1mbT4MKkV1ge")
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)

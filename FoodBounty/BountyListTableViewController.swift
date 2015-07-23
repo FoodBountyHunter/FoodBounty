@@ -41,9 +41,9 @@ class BountyListTableViewController: PFQueryTableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
-        let bounty: PFObject = self.objects![indexPath.row] as! PFObject
-        let reward = bounty.objectForKey("reward") as! Int
-        let poster = bounty.objectForKey("poster") as! PFUser
+        let bounty: Bounty = self.objects![indexPath.row] as! Bounty
+        let reward = bounty.reward
+        let poster = bounty.poster
         poster.fetch()
         
         cell.textLabel!.text = "\(reward)$"
