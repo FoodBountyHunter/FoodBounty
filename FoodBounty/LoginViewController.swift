@@ -20,10 +20,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         usernameTextField.delegate = self
         passwordTextField.delegate = self
         updateLoginButtonState()
-        
-//        self.navigationController?.navigationBar.backgroundColor = UIColor.purpleColor()
-//        self.navigationController?.navigationBar.alpha = 1.0;
-//        self.navigationController?.navigationBar.translucent = true;
     }
     
     func updateLoginButtonState() {

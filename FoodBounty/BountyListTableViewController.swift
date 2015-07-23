@@ -75,11 +75,19 @@ class BountyListTableViewController: PFQueryTableViewController {
         let poster = bounty.poster
         
         poster.fetchInBackgroundWithBlock { (object: PFObject?, error: NSError?) -> Void in
-            cell.addressLabel.text = AdressHelper.getReadableAdress(object as! PFUser)
+            dispatch_async(dispatch_get_main_queue()) {
+                cell.addressLabel.text = AdressHelper.getReadableAdress(object as! PFUser)
+            }
         }
         
-        cell.rewardLabel.text = "\(bounty.reward)$"
-        cell.itemsCountLabel.text = "\(bounty.itemCount()) Items"
+        bounty.itemCountAsync { (count: Int) -> Void in
+            dispatch_async(dispatch_get_main_queue()) {
+                cell.itemsCountLabel.text = "\(count) Items"
+                cell.itemsCountLabel.hidden = false
+            }
+        }
+        
+        cell.rewardLabel.text = "\(bounty.reward) $"
         cell.categoryLabel.text = BountyCategory.categoryById(bounty.category)
         
         return cell

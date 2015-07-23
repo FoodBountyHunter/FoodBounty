@@ -28,7 +28,7 @@ class BountyViewController: UIViewController {
     }
     
     func initData() {
-        self.rewardLabel.text = "\(self.bounty.reward)$"
+        self.rewardLabel.text = "\(self.bounty.reward) $"
         self.categoryLabel.text = BountyCategory.categoryById(self.bounty.category)
         self.usernameLabel.text = self.bounty.poster.username
         self.commentLabel.text = self.bounty.comment

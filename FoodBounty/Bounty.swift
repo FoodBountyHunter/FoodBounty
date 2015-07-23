@@ -41,17 +41,17 @@ class Bounty: PFObject, PFSubclassing {
         return pClass
     }
     
-    func itemCount() -> Int {
-        var count = 0
+    func itemCountAsync(block: (Int) -> Void) {
         var query = PFQuery(className: Item.pClass)
         query.whereKey("bounty", equalTo: self)
-        if let objects = query.findObjects() {
-            for object in objects {
+        
+        query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
+            var count = 0
+            for object in objects! {
                 let item = object as! Item
                 count += item.amount
             }
+            block(count)
         }
-        
-        return count
     }
 }

@@ -14,11 +14,21 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var accountSettingsBarButton: UIBarButtonItem!
     
+    @IBOutlet weak var claimedContainer: UIView!
+    @IBOutlet weak var postedBountyContainerView: UIView!
     var postedBountyTableViewController: BountyListTableViewController!
     var claimedBountyTableViewController: BountyListTableViewController!
     
     override func viewDidLoad() {
         self.navigationItem.hidesBackButton = true
+        
+        self.postedBountyContainerView.layer.borderColor = UIColor.lightGrayColor().CGColor
+        self.postedBountyContainerView.layer.borderWidth = 0.8
+        self.postedBountyContainerView.layer.cornerRadius = 5
+        self.claimedContainer.layer.borderColor = UIColor.lightGrayColor().CGColor
+        self.claimedContainer.layer.borderWidth = 0.8
+        self.claimedContainer.layer.cornerRadius = 5
+        
     }
     
     override func viewDidAppear(animated: Bool) {

@@ -19,11 +19,11 @@ class BountiesMapViewController: UIViewController, CLLocationManagerDelegate, GM
         self.locationManager.delegate = self
         self.locationManager.requestWhenInUseAuthorization()
         
-        var camera = GMSCameraPosition.cameraWithLatitude(47.498995, longitude: 8.728665, zoom: 5)
+        var camera = GMSCameraPosition.cameraWithLatitude(42.96356, longitude: -85.8899, zoom: 14.7)
         var mapView = GMSMapView.mapWithFrame(CGRectZero, camera: camera)
-        mapView.settings.compassButton = false
-        mapView.settings.myLocationButton = true
+        mapView.myLocationEnabled = true
         mapView.delegate = self
+        mapView.addObserver(self, forKeyPath: "myLocation", options: NSKeyValueObservingOptions.New, context: nil)
         self.view = mapView
         
         var query = Bounty.claimableBountiesQuery(PFUser.currentUser()!)
@@ -31,9 +31,21 @@ class BountiesMapViewController: UIViewController, CLLocationManagerDelegate, GM
             if objects != nil {
                 for bounty in objects! {
                     let poster = bounty.objectForKey("poster") as! PFUser
-                    poster.fetch()
-                    var address = AdressHelper.getReadableAdress(poster)
-                    self.placeBountyMarker(address, bounty: (bounty as! Bounty))
+                    poster.fetchInBackgroundWithBlock { (object: PFObject?, error: NSError?) -> Void in
+                        var address = AdressHelper.getReadableAdress(poster)
+                        self.placeBountyMarker(address, bounty: (bounty as! Bounty))
+                    }
+                }
+            }
+        }
+    }
+    
+    override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
+        if keyPath == "myLocation" {
+            if let mapView = self.view as? GMSMapView {
+                if mapView.myLocation != nil {
+                    var camera = GMSCameraPosition.cameraWithTarget(mapView.myLocation.coordinate, zoom: 16.0)
+                    mapView.animateToCameraPosition(camera)
                 }
             }
         }
@@ -71,15 +83,17 @@ class BountiesMapViewController: UIViewController, CLLocationManagerDelegate, GM
         let marker = GMSMarker()
         marker.position = CLLocationCoordinate2DMake(lat, lng)
         let reward = bounty.reward
-        marker.title = "\(BountyCategory.categoryById(bounty.category)), \(reward)$"
-        marker.snippet  = "\(bounty.itemCount()) Items"
+        marker.title = "\(BountyCategory.categoryById(bounty.category)), \(reward) $"
+//        marker.snippet  = "\(bounty.itemCount()) Items"
         marker.appearAnimation = kGMSMarkerAnimationPop
         marker.userData = bounty
         marker.map = self.view as! GMSMapView
     }
     
     func mapView(mapView: GMSMapView!, didTapInfoWindowOfMarker marker: GMSMarker!) {
-        
+        self.performSegueWithIdentifier("displayBountyFromMapSegue", sender: self)
+        var bountyVC = self.navigationController?.visibleViewController as! BountyViewController
+        bountyVC.bounty = marker.userData as! Bounty
     }
     
     func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
@@ -93,9 +107,13 @@ class BountiesMapViewController: UIViewController, CLLocationManagerDelegate, GM
         if running {
             if (CLAuthorizationStatus.AuthorizedWhenInUse == status) {
                 locationManager.startUpdatingLocation()
+                mapView.myLocationEnabled = true
+                mapView.settings.myLocationButton = true
             }
         } else {
             locationManager.stopUpdatingLocation()
+            mapView.settings.myLocationButton = false
+            mapView.myLocationEnabled = false
         }
         
     }
