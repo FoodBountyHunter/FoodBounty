@@ -14,8 +14,17 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var accountSettingsBarButton: UIBarButtonItem!
     
+    var postedBountyTableViewController: BountyListTableViewController!
+    var claimedBountyTableViewController: BountyListTableViewController!
+    
     override func viewDidLoad() {
         self.navigationItem.hidesBackButton = true
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.postedBountyTableViewController.updateTable()
+        self.claimedBountyTableViewController.updateTable()
     }
     
     @IBAction func postNewBounty(sender: AnyObject) {
@@ -37,6 +46,17 @@ class HomeViewController: UIViewController {
                     })
                 self.presentViewController(alert, animated: true, completion: nil)
             }
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "embedPostedBountiesSegue" {
+            self.postedBountyTableViewController = segue.destinationViewController as! BountyListTableViewController
+            self.postedBountyTableViewController.displayType = .Posted
+        }
+        else  if segue.identifier == "embedClaimedBountiesSegue" {
+            self.claimedBountyTableViewController = segue.destinationViewController as! BountyListTableViewController
+            self.claimedBountyTableViewController.displayType = .Claimed
         }
     }
 }

@@ -71,8 +71,8 @@ class BountiesMapViewController: UIViewController, CLLocationManagerDelegate, GM
         let marker = GMSMarker()
         marker.position = CLLocationCoordinate2DMake(lat, lng)
         let reward = bounty.reward
-        marker.title = "\(reward)$"
-        marker.snippet  = BountyCategory.categoryById(bounty.category)
+        marker.title = "\(BountyCategory.categoryById(bounty.category)), \(reward)$"
+        marker.snippet  = "\(bounty.itemCount()) Items"
         marker.appearAnimation = kGMSMarkerAnimationPop
         marker.userData = bounty
         marker.map = self.view as! GMSMapView
@@ -80,11 +80,6 @@ class BountiesMapViewController: UIViewController, CLLocationManagerDelegate, GM
     
     func mapView(mapView: GMSMapView!, didTapInfoWindowOfMarker marker: GMSMarker!) {
         
-    }
-    
-    func mapView(mapView: GMSMapView!, markerInfoWindow marker: GMSMarker!) -> UIView! {
-        
-        return nil
     }
     
     func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {

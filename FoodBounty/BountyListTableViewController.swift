@@ -10,6 +10,11 @@ import UIKit
 
 class BountyListTableViewController: PFQueryTableViewController {
     
+    enum DisplayType {
+        case Claimable, Posted, Claimed
+    }
+    
+    var displayType: DisplayType = .Claimable
     
     required init!(coder aDecoder: NSCoder!) {
         super.init(coder: aDecoder)
@@ -32,6 +37,10 @@ class BountyListTableViewController: PFQueryTableViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+        self.updateTable()
+    }
+    
+    func updateTable() {
         self.tableView.beginUpdates()
         self.loadObjects()
         self.tableView.reloadData()
@@ -51,6 +60,12 @@ class BountyListTableViewController: PFQueryTableViewController {
     }
     
     override func queryForTable() -> PFQuery {
+        if self.displayType == .Posted {
+            return Bounty.postedBountiesQuery(PFUser.currentUser()!)
+        }
+        else if self.displayType == .Claimed {
+            return Bounty.claimedBountiesQuery(PFUser.currentUser()!)
+        }        
         return Bounty.claimableBountiesQuery(PFUser.currentUser()!)
     }
     
@@ -58,12 +73,14 @@ class BountyListTableViewController: PFQueryTableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("BountyCell", forIndexPath: indexPath) as! BountyListTableViewCell
         let bounty: Bounty = self.objects![indexPath.row] as! Bounty
         let poster = bounty.poster
-        poster.fetch()
+        
+        poster.fetchInBackgroundWithBlock { (object: PFObject?, error: NSError?) -> Void in
+            cell.addressLabel.text = AdressHelper.getReadableAdress(object as! PFUser)
+        }
         
         cell.rewardLabel.text = "\(bounty.reward)$"
         cell.itemsCountLabel.text = "\(bounty.itemCount()) Items"
         cell.categoryLabel.text = BountyCategory.categoryById(bounty.category)
-        cell.addressLabel.text = AdressHelper.getReadableAdress(poster)
         
         return cell
     }

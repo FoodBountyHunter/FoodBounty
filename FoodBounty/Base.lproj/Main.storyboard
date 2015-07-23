@@ -295,8 +295,17 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SCX-GN-HCM">
+                                <rect key="frame" x="16" y="170" width="568" height="185"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="185" id="9m8-qQ-hIg"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="rmV-z0-EMG" kind="embed" identifier="embedPostedBountiesSegue" id="KGP-Dl-dcG"/>
+                                </connections>
+                            </containerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bounties you claimed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2z-kM-BRa">
-                                <rect key="frame" x="16" y="358" width="568" height="21"/>
+                                <rect key="frame" x="16" y="370" width="568" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -307,20 +316,14 @@
                                     <rect key="frame" x="16" y="358" width="368" height="21"/>
                                 </variation>
                             </label>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SCX-GN-HCM">
-                                <rect key="frame" x="16" y="170" width="568" height="185"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="185" id="9m8-qQ-hIg"/>
-                                </constraints>
-                                <connections>
-                                    <segue destination="rmV-z0-EMG" kind="embed" id="KGP-Dl-dcG"/>
-                                </connections>
-                            </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ssh-oM-67w">
-                                <rect key="frame" x="16" y="387" width="568" height="193"/>
+                                <rect key="frame" x="16" y="399" width="568" height="193"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="193" id="6Cg-i7-0k9"/>
                                 </constraints>
+                                <connections>
+                                    <segue destination="rmV-z0-EMG" kind="embed" identifier="embedClaimedBountiesSegue" id="yhh-Jc-FfD"/>
+                                </connections>
                             </containerView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="rAO-Ih-J8t">
                                 <rect key="frame" x="70" y="294" width="300" height="300"/>
@@ -348,8 +351,8 @@
                             <constraint firstItem="T2z-kM-BRa" firstAttribute="leading" secondItem="zPR-Cw-4Cr" secondAttribute="leadingMargin" id="aVh-ni-aDi"/>
                             <constraint firstItem="2oY-zn-gpy" firstAttribute="leading" secondItem="zPR-Cw-4Cr" secondAttribute="leadingMargin" id="bN2-GZ-mM9"/>
                             <constraint firstAttribute="centerX" secondItem="VQ6-t6-898" secondAttribute="centerX" id="dVq-yc-QMI"/>
+                            <constraint firstItem="T2z-kM-BRa" firstAttribute="top" secondItem="SCX-GN-HCM" secondAttribute="bottom" constant="15" id="mTO-P5-HUO"/>
                             <constraint firstItem="SCX-GN-HCM" firstAttribute="leading" secondItem="zPR-Cw-4Cr" secondAttribute="leadingMargin" id="oQg-U1-sTm"/>
-                            <constraint firstItem="T2z-kM-BRa" firstAttribute="top" secondItem="SCX-GN-HCM" secondAttribute="bottom" constant="3" id="xKt-a3-Iqu"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -865,7 +868,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DXv-P5-xKd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3443" y="254.5"/>
+            <point key="canvasLocation" x="4141" y="268.5"/>
         </scene>
         <!--Bounties-->
         <scene sceneID="zGK-d1-ljg">
@@ -1043,9 +1046,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="afC-Xl-QLh"/>
         <segue reference="KGP-Dl-dcG"/>
-        <segue reference="XcV-ON-ae3"/>
+        <segue reference="afC-Xl-QLh"/>
         <segue reference="0SG-Tq-pwm"/>
+        <segue reference="XcV-ON-ae3"/>
     </inferredMetricsTieBreakers>
 </document>
