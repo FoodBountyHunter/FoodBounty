@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Parse
-import ParseUI
 
 class BountyListTableViewController: PFQueryTableViewController {
     
@@ -26,6 +24,13 @@ class BountyListTableViewController: PFQueryTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let mapButton = UIBarButtonItem(title: "View on map", style: UIBarButtonItemStyle.Plain, target: self, action: "openMapView")
+        self.navigationItem.rightBarButtonItem = mapButton
+    }
+    
+    func openMapView () {
+        self.performSegueWithIdentifier("showMapViewSegue", sender: self)
     }
     
     override func queryForTable() -> PFQuery {

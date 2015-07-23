@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Parse
 
 class AdressHelper {
     
@@ -40,6 +39,11 @@ class AdressHelper {
         let city = user.objectForKey("city") as? String
         let state = user.objectForKey("state") as? Int
         
-        return "\(street!), \(postalCode!), \(city!), \(AdressHelper.getState(forId: state!))"
+        let streetStr = street == nil ? "" : street!
+        let postalCodeStr = postalCode == nil ? "" : postalCode!
+        let cityStr = city == nil ? "" : city!
+        let stateStr = state == nil ? "" : AdressHelper.getState(forId: state!)
+        
+        return "\(streetStr), \(postalCodeStr), \(cityStr), \(stateStr)"
     }
 }

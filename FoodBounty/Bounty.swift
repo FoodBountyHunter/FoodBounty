@@ -7,10 +7,15 @@
 //
 
 import Foundation
-import Parse
 
 class Bounty: PFObject {
     static let pClass = "Bounty"
+    
+    class func getQuery(notPostedByUser user: PFUser) -> PFQuery {
+        var query = PFQuery(className: pClass)
+        query.whereKey("poster", notEqualTo: user)
+        return query
+    }
     
     override init() {
         super.init()

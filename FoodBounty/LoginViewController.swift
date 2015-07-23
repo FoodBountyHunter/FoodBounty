@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Parse
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var usernameTextField: UITextField!
@@ -21,8 +20,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         usernameTextField.delegate = self
         passwordTextField.delegate = self
         updateLoginButtonState()
-        
-        usernameTextField.becomeFirstResponder()
     }
     
     func updateLoginButtonState() {

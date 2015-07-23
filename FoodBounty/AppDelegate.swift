@@ -7,20 +7,19 @@
 //
 
 import UIKit
-import Parse
-import Bolts
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    var count: Int? = 0
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Initializing Parse
         Parse.setApplicationId("dmiBApXpPQgCeGY2QqNCWkE3DocJRjR1yjfRgTpQ",
             clientKey: "yYOo68JiL6t8dLWOthqlGIkOJOEB1mbT4MKkV1ge")
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
+        GMSServices.provideAPIKey("AIzaSyAIzvJO72_2YJjkDmYsIeiI2RtTKc2AYQQ")
         
         return true
     }
@@ -46,7 +45,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
+    
+    func incrementNetworkActivity()
+    {
+        self.count!++
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+    }
+    
+    func decrementNetworkActivity()
+    {
+        if self.count! > 0 {
+            self.count!--
+        }
+        if self.count! == 0 {
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        }
+    }
+    
+    func resetNetworkActivity()
+    {
+        self.count! = 0
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+    }
 
 }
 

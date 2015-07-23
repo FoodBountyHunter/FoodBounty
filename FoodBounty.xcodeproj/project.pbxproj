@@ -7,29 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3383D9501B6057A900CC89DF /* BountiesMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3383D94F1B6057A900CC89DF /* BountiesMapViewController.swift */; };
 		33C153771B5E91FB00873591 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C153761B5E91FB00873591 /* AppDelegate.swift */; };
 		33C1537C1B5E91FB00873591 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33C1537A1B5E91FB00873591 /* Main.storyboard */; };
 		33C1537E1B5E91FB00873591 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33C1537D1B5E91FB00873591 /* Images.xcassets */; };
 		33C153811B5E91FB00873591 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33C1537F1B5E91FB00873591 /* LaunchScreen.xib */; };
 		33C1538D1B5E91FB00873591 /* FoodBountyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C1538C1B5E91FB00873591 /* FoodBountyTests.swift */; };
-		33C1539C1B5E925500873591 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33C153961B5E925500873591 /* Bolts.framework */; };
-		33C1539D1B5E925500873591 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33C153971B5E925500873591 /* Parse.framework */; };
-		33C1539E1B5E925500873591 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33C153981B5E925500873591 /* ParseCrashReporting.framework */; };
-		33C1539F1B5E925500873591 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33C153991B5E925500873591 /* ParseFacebookUtils.framework */; };
-		33C153A01B5E925500873591 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33C1539A1B5E925500873591 /* ParseFacebookUtilsV4.framework */; };
-		33C153A11B5E925500873591 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33C1539B1B5E925500873591 /* ParseUI.framework */; };
-		33C153AB1B5E92A100873591 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33C153A21B5E92A100873591 /* AudioToolbox.framework */; };
-		33C153AC1B5E92A100873591 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33C153A31B5E92A100873591 /* CFNetwork.framework */; };
-		33C153AD1B5E92A100873591 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33C153A41B5E92A100873591 /* CoreGraphics.framework */; };
-		33C153AE1B5E92A100873591 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33C153A51B5E92A100873591 /* CoreLocation.framework */; };
-		33C153AF1B5E92A100873591 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 33C153A61B5E92A100873591 /* libz.dylib */; };
-		33C153B01B5E92A100873591 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33C153A71B5E92A100873591 /* QuartzCore.framework */; };
-		33C153B11B5E92A100873591 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33C153A81B5E92A100873591 /* Security.framework */; };
-		33C153B21B5E92A100873591 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33C153A91B5E92A100873591 /* StoreKit.framework */; };
-		33C153B31B5E92A100873591 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33C153AA1B5E92A100873591 /* SystemConfiguration.framework */; };
-		33C153B51B5E92A900873591 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 33C153B41B5E92A900873591 /* libsqlite3.dylib */; };
-		33C153B71B5E92AF00873591 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33C153B61B5E92AF00873591 /* Accounts.framework */; };
-		33C153B91B5E92B400873591 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33C153B81B5E92B400873591 /* Social.framework */; };
 		33C153BC1B5E976C00873591 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C153BB1B5E976C00873591 /* LoginViewController.swift */; };
 		33C153BE1B5EBFC100873591 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C153BD1B5EBFC100873591 /* HomeViewController.swift */; };
 		33C153C01B5EC03600873591 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C153BF1B5EC03600873591 /* SignUpViewController.swift */; };
@@ -44,6 +27,7 @@
 		33EF18041B5FEE9300B75ABD /* Bounty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EF18031B5FEE9300B75ABD /* Bounty.swift */; };
 		33EF18081B6006BF00B75ABD /* ItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EF18071B6006BF00B75ABD /* ItemTableViewController.swift */; };
 		33EF180A1B60075900B75ABD /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EF18091B60075900B75ABD /* Item.swift */; };
+		D5D57F13A63AFDD0B1264E2E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 67A092B58925E3EF07C00D59 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		337A0A791B6050E50003F437 /* FoodBounty-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FoodBounty-Bridging-Header.h"; sourceTree = "<group>"; };
+		3383D94F1B6057A900CC89DF /* BountiesMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BountiesMapViewController.swift; path = ../../../BountiesMapViewController.swift; sourceTree = "<group>"; };
 		33C153711B5E91FB00873591 /* FoodBounty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodBounty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33C153751B5E91FB00873591 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33C153761B5E91FB00873591 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,24 +52,6 @@
 		33C153861B5E91FB00873591 /* FoodBountyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodBountyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		33C1538B1B5E91FB00873591 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33C1538C1B5E91FB00873591 /* FoodBountyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodBountyTests.swift; sourceTree = "<group>"; };
-		33C153961B5E925500873591 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		33C153971B5E925500873591 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
-		33C153981B5E925500873591 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
-		33C153991B5E925500873591 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
-		33C1539A1B5E925500873591 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
-		33C1539B1B5E925500873591 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
-		33C153A21B5E92A100873591 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		33C153A31B5E92A100873591 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		33C153A41B5E92A100873591 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		33C153A51B5E92A100873591 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		33C153A61B5E92A100873591 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		33C153A71B5E92A100873591 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		33C153A81B5E92A100873591 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		33C153A91B5E92A100873591 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		33C153AA1B5E92A100873591 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		33C153B41B5E92A900873591 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		33C153B61B5E92AF00873591 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
-		33C153B81B5E92B400873591 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		33C153BB1B5E976C00873591 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		33C153BD1B5EBFC100873591 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		33C153BF1B5EC03600873591 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +66,9 @@
 		33EF18031B5FEE9300B75ABD /* Bounty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bounty.swift; sourceTree = "<group>"; };
 		33EF18071B6006BF00B75ABD /* ItemTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTableViewController.swift; sourceTree = "<group>"; };
 		33EF18091B60075900B75ABD /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		472139423D83489D60215AA0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		67A092B58925E3EF07C00D59 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BF1DF5CE5B0FB39649E1DD4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,24 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33C153B91B5E92B400873591 /* Social.framework in Frameworks */,
-				33C153B71B5E92AF00873591 /* Accounts.framework in Frameworks */,
-				33C153B51B5E92A900873591 /* libsqlite3.dylib in Frameworks */,
-				33C153AB1B5E92A100873591 /* AudioToolbox.framework in Frameworks */,
-				33C153AC1B5E92A100873591 /* CFNetwork.framework in Frameworks */,
-				33C153AD1B5E92A100873591 /* CoreGraphics.framework in Frameworks */,
-				33C153AE1B5E92A100873591 /* CoreLocation.framework in Frameworks */,
-				33C153AF1B5E92A100873591 /* libz.dylib in Frameworks */,
-				33C153B01B5E92A100873591 /* QuartzCore.framework in Frameworks */,
-				33C153B11B5E92A100873591 /* Security.framework in Frameworks */,
-				33C153B21B5E92A100873591 /* StoreKit.framework in Frameworks */,
-				33C153B31B5E92A100873591 /* SystemConfiguration.framework in Frameworks */,
-				33C153A11B5E925500873591 /* ParseUI.framework in Frameworks */,
-				33C1539D1B5E925500873591 /* Parse.framework in Frameworks */,
-				33C1539E1B5E925500873591 /* ParseCrashReporting.framework in Frameworks */,
-				33C1539F1B5E925500873591 /* ParseFacebookUtils.framework in Frameworks */,
-				33C1539C1B5E925500873591 /* Bolts.framework in Frameworks */,
-				33C153A01B5E925500873591 /* ParseFacebookUtilsV4.framework in Frameworks */,
+				D5D57F13A63AFDD0B1264E2E /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,10 +93,11 @@
 		33C153681B5E91FB00873591 = {
 			isa = PBXGroup;
 			children = (
-				33C153BA1B5E956F00873591 /* Frameworks */,
 				33C153731B5E91FB00873591 /* FoodBounty */,
 				33C153891B5E91FB00873591 /* FoodBountyTests */,
 				33C153721B5E91FB00873591 /* Products */,
+				EE31A0341B6C70AE4F945869 /* Pods */,
+				55D721C63B561EDAD9D455B2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -166,6 +121,7 @@
 				33C1537A1B5E91FB00873591 /* Main.storyboard */,
 				33C1537D1B5E91FB00873591 /* Images.xcassets */,
 				33C1537F1B5E91FB00873591 /* LaunchScreen.xib */,
+				337A0A791B6050E50003F437 /* FoodBounty-Bridging-Header.h */,
 				33C153741B5E91FB00873591 /* Supporting Files */,
 			);
 			path = FoodBounty;
@@ -196,31 +152,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		33C153BA1B5E956F00873591 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				33C153B81B5E92B400873591 /* Social.framework */,
-				33C153B61B5E92AF00873591 /* Accounts.framework */,
-				33C153B41B5E92A900873591 /* libsqlite3.dylib */,
-				33C153A21B5E92A100873591 /* AudioToolbox.framework */,
-				33C153A31B5E92A100873591 /* CFNetwork.framework */,
-				33C153A41B5E92A100873591 /* CoreGraphics.framework */,
-				33C153A51B5E92A100873591 /* CoreLocation.framework */,
-				33C153A61B5E92A100873591 /* libz.dylib */,
-				33C153A71B5E92A100873591 /* QuartzCore.framework */,
-				33C153A81B5E92A100873591 /* Security.framework */,
-				33C153A91B5E92A100873591 /* StoreKit.framework */,
-				33C153AA1B5E92A100873591 /* SystemConfiguration.framework */,
-				33C153961B5E925500873591 /* Bolts.framework */,
-				33C153971B5E925500873591 /* Parse.framework */,
-				33C153981B5E925500873591 /* ParseCrashReporting.framework */,
-				33C153991B5E925500873591 /* ParseFacebookUtils.framework */,
-				33C1539A1B5E925500873591 /* ParseFacebookUtilsV4.framework */,
-				33C1539B1B5E925500873591 /* ParseUI.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		33C153C11B5ECD2600873591 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,6 +163,7 @@
 				33EF18071B6006BF00B75ABD /* ItemTableViewController.swift */,
 				33E1A3EC1B6021F500C9FC12 /* AddItemViewController.swift */,
 				33E1A3EE1B602E3700C9FC12 /* BountyListTableViewController.swift */,
+				3383D94F1B6057A900CC89DF /* BountiesMapViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -263,6 +195,23 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		55D721C63B561EDAD9D455B2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				67A092B58925E3EF07C00D59 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EE31A0341B6C70AE4F945869 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9BF1DF5CE5B0FB39649E1DD4 /* Pods.debug.xcconfig */,
+				472139423D83489D60215AA0 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -270,9 +219,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 33C153901B5E91FB00873591 /* Build configuration list for PBXNativeTarget "FoodBounty" */;
 			buildPhases = (
+				4A9FADC9FC6D085466657DEF /* Check Pods Manifest.lock */,
 				33C1536D1B5E91FB00873591 /* Sources */,
 				33C1536E1B5E91FB00873591 /* Frameworks */,
 				33C1536F1B5E91FB00873591 /* Resources */,
+				D0AD2A266A63F5D5BCC64655 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -359,6 +310,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4A9FADC9FC6D085466657DEF /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D0AD2A266A63F5D5BCC64655 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		33C1536D1B5E91FB00873591 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -370,6 +354,7 @@
 				33E1A3F11B6033BC00C9FC12 /* AdressHelper.swift in Sources */,
 				33C153C01B5EC03600873591 /* SignUpViewController.swift in Sources */,
 				33C153BE1B5EBFC100873591 /* HomeViewController.swift in Sources */,
+				3383D9501B6057A900CC89DF /* BountiesMapViewController.swift in Sources */,
 				33E1A3ED1B6021F500C9FC12 /* AddItemViewController.swift in Sources */,
 				33C153C41B5ECD4200873591 /* ViewControllerUtils.swift in Sources */,
 				33EF180A1B60075900B75ABD /* Item.swift in Sources */,
@@ -502,29 +487,44 @@
 		};
 		33C153911B5E91FB00873591 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9BF1DF5CE5B0FB39649E1DD4 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = FoodBounty/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FoodBounty/FoodBounty-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		33C153921B5E91FB00873591 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 472139423D83489D60215AA0 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = FoodBounty/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FoodBounty/FoodBounty-Bridging-Header.h";
 			};
 			name = Release;
 		};

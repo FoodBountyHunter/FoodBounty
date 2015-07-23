@@ -8,7 +8,6 @@
 
 
 import UIKit
-import Parse
 import QuartzCore
 
 class HomeViewController: UIViewController {

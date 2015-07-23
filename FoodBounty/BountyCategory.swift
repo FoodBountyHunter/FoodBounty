@@ -10,4 +10,8 @@ import Foundation
 
 class BountyCategory {
     static let categories = [0: "Fast Food", 1: "Groceries"]
+    
+    class func categoryById(id: Int) -> String {
+        return BountyCategory.categories[id]!
+    }
 }

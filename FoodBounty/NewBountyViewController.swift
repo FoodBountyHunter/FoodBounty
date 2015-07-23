@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Parse
-import ParseUI
 import QuartzCore
 
 class NewBountyViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
