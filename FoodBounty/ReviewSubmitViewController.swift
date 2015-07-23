@@ -35,6 +35,9 @@ class ReviewSubmitViewController: UIViewController ,UITextViewDelegate{
         let predicate = NSPredicate(format: "OrderID = testOrderID")
         
         self.hunterLabel.text = review.hunterId.username
+        self.timelinessLabel.text = "3"
+        self.qualityLabel.text = "3"
+        
     }
     
     // Should send to Profile View Controller or the Review List view controller
@@ -49,18 +52,21 @@ class ReviewSubmitViewController: UIViewController ,UITextViewDelegate{
         review.qualityRate = qualitySlider.value
         review.comments = self.commentsTextField.text
         review.finished = true
-        
+        review.saveInBackground()
         
         ViewControllerUtils.returnToLastView(self)
     }
     
     @IBAction func timelinessSlider(sender: UISlider) {
-        self.timelinessLabel.text = ( timelinessSlider.value % 0.5).description
-        
+        var newValue = round(timelinessSlider.value)
+        self.timelinessLabel.text = "\(Int(newValue))"
+        self.timelinessSlider.value = newValue
     }
     
     @IBAction func QualitySlider(sender: UISlider) {
-        self.qualityLabel.text =  (qualitySlider.value % 0.5).description
+        var newValue = round(qualitySlider.value)
+        self.qualityLabel.text = "\(Int(newValue))"
+        self.qualitySlider.value = newValue
     }
     
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {

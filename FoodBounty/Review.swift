@@ -25,6 +25,7 @@ class Review: PFObject, PFSubclassing {
     static func queryOpenReviews(forUser user: PFUser) -> PFQuery {
         var query = PFQuery(className: pClass)
         query.whereKey("hunterId", equalTo: user)
+        query.whereKey("finished", equalTo: true)
         return query
     }
     

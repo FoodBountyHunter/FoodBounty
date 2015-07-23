@@ -23,7 +23,7 @@ class BountiesMapViewController: UIViewController, CLLocationManagerDelegate, GM
         var mapView = GMSMapView.mapWithFrame(CGRectZero, camera: camera)
         mapView.myLocationEnabled = true
         mapView.delegate = self
-        mapView.addObserver(self, forKeyPath: "myLocation", options: NSKeyValueObservingOptions.New, context: nil)
+        //mapView.addObserver(self, forKeyPath: "myLocation", options: NSKeyValueObservingOptions.New, context: nil)
         self.view = mapView
         
         var query = Bounty.claimableBountiesQuery(PFUser.currentUser()!)
@@ -38,6 +38,12 @@ class BountiesMapViewController: UIViewController, CLLocationManagerDelegate, GM
                 }
             }
         }
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        //var mapView = self.view as! GMSMapView
+        //mapView.removeObserver(self, forKeyPath: "myLocation")
     }
     
     override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
@@ -121,5 +127,7 @@ class BountiesMapViewController: UIViewController, CLLocationManagerDelegate, GM
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         updateLocation(true)
+        //var mapView = self.view as! GMSMapView
+        //mapView.addObserver(self, forKeyPath: "myLocation", options: NSKeyValueObservingOptions.New, context: nil)
     }
 }
