@@ -22,6 +22,8 @@ class BountyViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        initData()
     }
     
     func initData() {
@@ -39,6 +41,7 @@ class BountyViewController: UIViewController {
         if segue.identifier == "itemTableViewEmbed" {
             self.itemTableViewController = segue.destinationViewController as! ItemTableViewController
             self.itemTableViewController.bounty = self.bounty
+            self.itemTableViewController.itemsAdded = true
         }
     }
 }

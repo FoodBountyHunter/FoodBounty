@@ -33,6 +33,14 @@ class BountyListTableViewController: PFQueryTableViewController {
         self.performSegueWithIdentifier("showMapViewSegue", sender: self)
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "displayBountyFromListSegue" {
+            var bountyVC = segue.destinationViewController as! BountyViewController
+            var row: Int = ((self.view as! UITableView).indexPathForSelectedRow())!.row as Int
+            bountyVC.bounty = self.objects![row] as! Bounty
+        }
+    }
+    
     override func queryForTable() -> PFQuery {
         var query = PFQuery(className: Bounty.pClass)
         
